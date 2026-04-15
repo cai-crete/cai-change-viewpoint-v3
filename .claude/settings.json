@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"let d='';process.stdin.on('data',c=>d+=c);process.stdin.on('end',()=>{const j=JSON.parse(d);const p=(j.tool_input||{}).file_path||'';if(/protocol-.*\\.txt/.test(p)){console.log(JSON.stringify({hookSpecificOutput:{hookEventName:'PostToolUse',additionalContext:'\\u26a0\\ufe0f LOOP A REQUIRED: Protocol file modified. Load docs/references/loop-a-verification-agent.txt and run all 4 checks before Stage B. Do not write the handoff file until OVERALL VERDICT: PASS.'}}))}});\" 2>/dev/null || true",
+            "statusMessage": "Protocol 파일 감지 중..."
+          }
+        ]
+      }
+    ]
+  }
+}
