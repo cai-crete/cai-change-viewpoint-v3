@@ -1,0 +1,63 @@
+# GOAL
+* Generate a precise "Eye-Level Corner View" of the architecture presented in the source image.
+* Treat the building in the image as a completed, constructed reality.
+* Change the angle of view to this specific new perspective without altering the building's original geometry, materials, or style.
+* Render the simulation strictly by resetting the **Angle of View** and the **Optical Environment**.
+
+# **Photographer's workflow**
+**Manual Entry: Capturing a Dynamic Eye-Level Corner View**
+
+This professional technique utilizes a **two-point perspective** to maximize a building's sense of form, volume, and depth.
+
+**Method:**
+1.  **Positioning:** Place the camera at ground level, maintaining a standard **eye-level height (approx. 1.5 - 1.8 meters)**. Frame the shot from a corner, allowing two facades of the building to recede into the frame.
+
+2.  **Photographic Focus:** The objective is to capture the interplay between the building's primary surfaces and its structural rhythm. Concentrate on how the light models the **volumetric mass** and reveals the **texture of the main facade materials**. The pattern of fenestration (windows) should be used to create a sense of scale and repetition.
+
+3.  **Lighting:** As a standard professional practice, shoot under the **soft, even, diffused light of an overcast day**. This neutral lighting is chosen to avoid harsh shadows that can obscure architectural forms, allowing for a clear and objective documentation of the materials and design.
+
+4.  **Lens and Perspective Control:** Use a **wide-angle lens (e.g., 24-35mm)** to create a sense of presence. It is critical to use a **tilt-shift lens** or apply meticulous perspective correction in post-production. All vertical lines must be rendered perfectly straight to maintain architectural integrity.
+
+# Specification: Eye-Level Corner View
+* **Shooting Intent**: Naturally expresses the building's three-dimensionality and surrounding context, and provides a sense of stability by perfectly controlling vertical distortion.
+* **Camera**: Sony A7R V (61MP High Resolution)
+* **Lens**: Canon TS-E 24mm f/3.5L II (Tilt-Shift Lens, using adapter)
+* **Aperture**: f/11 (Securing sharpness across the entire image with pan focus)
+* **ISO**: 100 (Best image quality and minimum noise)
+* **Shutter Speed**: 1/125 sec
+* **Other Equipment**: Sturdy Tripod (Prevention of shake and long exposure)
+
+---
+<json code>
+{
+  "prompt": {
+    "goal": [
+      "Generate a precise, high-resolution, photorealistic 'Eye-Level Corner View' of the architecture from the source image.",
+      "Strictly preserve the building's original geometry, volume, material textures, and architectural style as a complete, constructed reality.",
+      "Simulate a seamless angle-of-view change to this new ground-level perspective without introducing form distortion.",
+      "Render the simulation by strictly resetting the Angle of View and the Optical Environment to professional standards."
+    ],
+    "photographers_workflow": {
+      "title": "Manual Entry: Capturing a Dynamic, Corrected Eye-Level Corner View",
+      "description": "This professional technique utilizes a perfect two-point perspective to maximize a building's sense of form, volume, and depth, while ensuring geometric accuracy.",
+      "method": {
+        "positioning": "Place the camera at street level, maintaining a standard eye-level height (approx. 1.7 meters). Position the camera at a corner intersection to allow two primary facades to recede into the frame with balanced prominence.",
+        "photographic_focus": "The core objective is a clear, objective documentation of the architecture. Concentrate on the interplay of form and material textures. The pattern of fenestration and structural rhythm must be sharp and precise to establish a clear sense of scale and repetition.",
+        "lighting": "Shoot under the heavily diffused, even light of a high-level overcast cloud cover. This neutral, soft lighting is essential to reveal the full textural details of all materials without harsh shadows or specular glare, allowing for an accurate architectural representation.",
+        "lens_and_perspective_control": "Use a wide-angle perspective control (tilt-shift) lens, equivalent to 24mm on a full-frame sensor. It is critical to meticulously apply shift controls (and perspective correction in post-production if needed) to ensure all vertical lines are perfectly straight and parallel to the frame, maintaining architectural integrity and stability."
+      }
+    },
+    "specification": {
+      "view_type": "Corrected Eye-Level Corner View",
+      "details": {
+        "shooting_intent": "Naturally and accurately expresses the building's three-dimensionality and surrounding urban context, providing a sense of monumental presence and stability by perfectly controlling vertical distortion.",
+        "camera": "Full-Frame Mirrorless (High-Resolution Sensor, e.g., Sony A7R V or equivalent)",
+        "lens": "24mm f/3.5 Perspective Control (Tilt-Shift) Lens",
+        "aperture": "f/11 (To ensure edge-to-edge sharpness with pan focus across the architectural features)",
+        "iso": 100,
+        "shutter_speed": "1/160 sec",
+        "other_equipment": "Gitzo Systematic Tripod with Geared Head (For precise alignment and stabilization), Cable Release"
+      }
+    }
+  }
+}

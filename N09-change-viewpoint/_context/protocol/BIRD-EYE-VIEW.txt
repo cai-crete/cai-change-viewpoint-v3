@@ -1,0 +1,55 @@
+# GOAL
+* Generate a precise "Bird's-eye Perspective View" of the architecture presented in the source image.
+* Treat the building in the image as a completed, constructed reality.
+* Change the angle of view to this specific new perspective without altering the building's original geometry, materials, or style.
+* Render the simulation strictly by resetting the **Angle of View** and the **Optical Environment**.
+
+# **Photographer's workflow**
+A professional drone photography technique for creating a dynamic and hyper-realistic **Bird's-eye Perspective view** of a building, showcasing its roof plane and facades with a natural sense of depth and scale.
+
+This method requires positioning a drone at a **high altitude** and angling the camera downward (typically between **45 to 60 degrees**) relative to the ground. Using a **wide-angle to standard focal length (e.g., 24mm to 35mm)** introduces natural perspective distortion (vanishing points), allowing the building to recede realistically into its surrounding context and emphasizing its three-dimensional volume.
+
+Shoot under **crisp, clear daylight or golden hour lighting** with strong directional sunlight. This lighting is essential to cast defined, natural shadows that carve out the architectural geometry, creating a highly tactile, hyper-realistic atmosphere with rich contrast and deep spatial awareness.
+
+The final image should be rendered in **ultra-high resolution** using High Dynamic Range (HDR) techniques to ensure absolute sharpness and photorealistic detail across both brilliant highlights and deep shadows. Frame the composition in a **16:9 or 4:3 aspect ratio** to provide a cinematic, immersive view of the architecture beautifully anchored within its environment.
+
+# Specification: Bird's-eye Perspective View
+* **Shooting Intent**: Uses a drone to capture a hyper-realistic, three-dimensional view of the building integrated within its context. Uses natural perspective to emphasize architectural scale and depth, creating an immersive, true-to-life visual experience.
+* **Camera**: DJI Mavic 3 Pro Cine (Drone)
+* **Lens**: 24mm Hasselblad Camera (Wide-angle to capture context and natural perspective distortion)
+* **Aperture**: f/8 (For maximum edge-to-edge sharpness and deep depth of field)
+* **ISO**: 100
+* **Shutter Speed**: 1/500 sec (To ensure absolute stability and crisp details from the air)
+* **Other Equipment**: Auto Exposure Bracketing (AEB) for hyper-realistic HDR processing and precise GPS hovering.
+---
+<json code>
+{
+  "prompt": {
+    "goal": [
+      "Generate a precise \"Bird's-eye Perspective View\" of the architecture presented in the source image.",
+      "Treat the building in the image as a completed, constructed reality.",
+      "Change the angle of view to this specific new perspective without altering the building's original geometry, materials, or style.",
+      "Render the simulation strictly by resetting the Angle of View and the Optical Environment."
+    ],
+    "photographers_workflow": {
+      "description": "A professional drone photography technique for creating a dynamic and hyper-realistic Bird's-eye Perspective view of a building, showcasing its roof plane and facades with a natural sense of depth and scale.",
+      "method": {
+        "positioning_and_perspective": "This method requires positioning a drone at a high altitude and angling the camera downward (typically between 45 to 60 degrees) relative to the ground. Using a wide-angle to standard focal length (e.g., 24mm to 35mm) introduces natural perspective distortion (vanishing points), allowing the building to recede realistically into its surrounding context and emphasizing its three-dimensional volume.",
+        "lighting": "Shoot under crisp, clear daylight or golden hour lighting with strong directional sunlight. This lighting is essential to cast defined, natural shadows that carve out the architectural geometry, creating a highly tactile, hyper-realistic atmosphere with rich contrast and deep spatial awareness.",
+        "rendering_and_composition": "The final image should be rendered in ultra-high resolution using High Dynamic Range (HDR) techniques to ensure absolute sharpness and photorealistic detail across both brilliant highlights and deep shadows. Frame the composition in a 16:9 or 4:3 aspect ratio to provide a cinematic, immersive view of the architecture beautifully anchored within its environment."
+      }
+    },
+    "specification": {
+      "view_type": "Bird's-eye Perspective View",
+      "details": {
+        "shooting_intent": "Uses a drone to capture a hyper-realistic, three-dimensional view of the building integrated within its context. Uses natural perspective to emphasize architectural scale and depth, creating an immersive, true-to-life visual experience.",
+        "camera": "DJI Mavic 3 Pro Cine (Drone)",
+        "lens": "24mm Hasselblad Camera (Wide-angle to capture context and natural perspective distortion)",
+        "aperture": "f/8 (For maximum edge-to-edge sharpness and deep depth of field)",
+        "iso": 100,
+        "shutter_speed": "1/500 sec (To ensure absolute stability and crisp details from the air)",
+        "other_equipment": "Auto Exposure Bracketing (AEB) for hyper-realistic HDR processing and precise GPS hovering."
+      }
+    }
+  }
+}

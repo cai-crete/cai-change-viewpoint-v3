@@ -1,0 +1,60 @@
+# GOAL
+* Generate a precise "LEFT Elevation View" of the architecture presented in the source image.
+* Treat the building in the image as a completed, constructed reality.
+* Change the angle of view to this specific new perspective without altering the building's original geometry, materials, or style.
+* Render the simulation strictly by resetting the **Angle of View** and the **Optical Environment**.
+
+# PHOTOGRAPHER'S WORKFLOW
+**Manual Entry: Capturing a Distortion-Free Elevation (LEFT) View**
+This professional technique is used to create a perfectly flat, perspective-corrected representation of a building's right facade, documenting the full lateral profile of the structure.
+
+**Method:**
+1.  **Positioning:** Place the camera directly facing the building's left facade, ensuring the camera's sensor plane is perfectly parallel to the left side surface. The camera must be positioned at a 90-degree angle from the front facade centerline.
+2.  **Photographic Focus:** The objective is to document the formal composition of the left facade. Concentrate on the building's lateral depth, the rhythm of its side-facing modular elements, floor-to-floor height relationships, and its pure materiality as expressed on the left elevation. The goal is to render the architect's left-side facade composition with orthographic clarity — a photorealistic, perspective-corrected image that faithfully preserves the building's true lateral geometry, scale, and material quality.
+3.  **Lighting:** As a standard professional practice, shoot under the soft, even, diffused light of an overcast day. This neutral lighting is chosen to render textures and colors accurately without directional shadows that could obscure the left facade's details or misrepresent its flatness.
+4.  **Lens and Perspective Control:** The use of a tilt-shift lens is non-negotiable for this type of shot. It allows for precise composition while keeping the camera perfectly level, thus rendering all vertical and horizontal lines of the left facade perfectly parallel to the frame. A telephoto lens can also be used from a distance to further compress the perspective and minimize lateral distortion.
+
+# SPECIFICATION: RIGHT ELEVATION VIEW
+* **Shooting Intent:** Captures the architect's left-side facade design with maximum geometric fidelity and minimal perspective distortion. The result is a photorealistic architectural photograph — not an illustration or graphic — in which all vertical and horizontal lines appear perfectly parallel, and the true lateral proportions, material textures, and modular rhythms of the right facade are rendered with documentary precision.
+* **Camera:** Sony A7R V
+* **Lens:** Canon TS-E 50mm f/2.8L MACRO (Standard angle Tilt-Shift Lens)
+* **Aperture:** f/11
+* **ISO:** 100
+* **Shutter Speed:** 1/125 sec
+* **Other Equipment:** Tripod
+
+---
+```json
+{
+  "prompt_configuration": {
+    "goal": [
+      "Generate a precise 'LEFT Elevation View' of the architecture presented in the source image.",
+      "Treat the building in the image as a completed, constructed reality.",
+      "Change the angle of view to this specific new perspective without altering the building's original geometry, materials, or style.",
+      "Render the simulation strictly by resetting the Angle of View and the Optical Environment."
+    ],
+    "photographers_workflow": {
+      "technique": "Manual Entry: Capturing a Distortion-Free Elevation (LEFT) View",
+      "description": "This professional technique is used to create a perfectly flat, perspective-corrected representation of a building's left facade, documenting the full lateral profile of the structure.",
+      "method": {
+        "positioning": "Place the camera directly facing the building's left facade, ensuring the camera's sensor plane is perfectly parallel to the left side surface. The camera must be positioned at a 90-degree angle from the front facade centerline.",
+        "photographic_focus": "The objective is to document the formal composition of the left facade. Concentrate on the building's lateral depth, the rhythm of its side-facing modular elements, floor-to-floor height relationships, and its pure materiality as expressed on the left elevation. The goal is to render the architect's left-side facade composition with orthographic clarity — a photorealistic, perspective-corrected image that faithfully preserves the building's true lateral geometry, scale, and material quality.",
+        "lighting": "As a standard professional practice, shoot under the soft, even, diffused light of an overcast day. This neutral lighting is chosen to render textures and colors accurately without directional shadows that could obscure the left facade's details or misrepresent its flatness.",
+        "lens_and_perspective_control": "The use of a tilt-shift lens is non-negotiable for this type of shot. It allows for precise composition while keeping the camera perfectly level, thus rendering all vertical and horizontal lines of the left facade perfectly parallel to the frame. A telephoto lens can also be used from a distance to further compress the perspective and minimize lateral distortion."
+      }
+    },
+    "specification": {
+      "view_type": "LEFT ELEVATION VIEW",
+      "shooting_intent": "Captures the architect's left-side facade design with maximum geometric fidelity and minimal perspective distortion. The result is a photorealistic architectural photograph — not an illustration or graphic — in which all vertical and horizontal lines appear perfectly parallel, and the true lateral proportions, material textures, and modular rhythms of the left facade are rendered with documentary precision.",
+      "equipment_and_settings": {
+        "camera": "Sony A7R V",
+        "lens": "Canon TS-E 50mm f/2.8L MACRO (Standard angle Tilt-Shift Lens)",
+        "aperture": "f/11",
+        "iso": 100,
+        "shutter_speed": "1/125 sec",
+        "other_equipment": "Tripod"
+      }
+    }
+  }
+}
+```

@@ -1,40 +1,51 @@
-REVISION: 5
+REVISION: 14
 DATE: 2026-04-16
-SESSION: Protocol 교체 및 Loop A 검증
+SESSION: N09 — Vercel Build Fix (active-v15)
 
 === 방금 무엇을 했는가 ===
-1. protocol-change-viewpoint-v1.txt를 v5(MWRS 구조)로 전체 교체
-2. loop-a-verification-agent.txt에 COMPLIANCE CHECK 코드 위임 예외 규칙 추가
-3. 프로토콜에 # COMPLIANCE CHECK 위임 포인터 추가 (→ lib/compliance.ts)
-4. Loop A 검증 2회 실행
+active-v15 작업 완료: Vercel 배포 오류 수정
 
-**Loop A 결과 (Iteration 2):**
-- CHECK 1 FAIL: # SYSTEM, # CONTEXT, # ACTION PROTOCOL 헤더 누락 (내용은 존재)
-- CHECK 2 FAIL: Room 개요/상세 중복 4건
-- CHECK 3 FAIL: ACTION PROTOCOL ↔ COMPLIANCE CHECK 매핑 없음
-- CHECK 4 PASS: 4/5 (Pattern 1 취약)
-- 사용자 결정: 현행 MWRS 구조 유지, 헤더 수정 없이 진행
+### 문제
+- Vercel 빌드 실패: `Command "n/a build" exited with 1`
+- 원인: git repo 루트에 package.json 없음
+  → Vercel이 프레임워크를 감지 못해 "n/a"로 인식 → 빌드 명령 없음
+
+### 조치
+- `vercel.json` 생성 (repo 루트):
+  ```json
+  {
+    "buildCommand": "cd N09-change-viewpoint && npm run build",
+    "outputDirectory": "N09-change-viewpoint/dist",
+    "installCommand": "cd N09-change-viewpoint && npm install"
+  }
+  ```
+- git commit & push → `main` 브랜치 반영
 
 === 어디까지 완료됐는가 ===
-1. Phase 1 앱 (Vite): 완료
-2. product-spec (NodeContract): 완료
-3. _context/protocol/ + Knowledge Docs 5개: 완료
-4. protocol-change-viewpoint-v1.txt: v5(MWRS) 교체 완료
-   - Loop A FAIL 상태이나 사용자가 현행 유지 결정
-   - # COMPLIANCE CHECK → lib/compliance.ts 위임 포인터 추가됨
-5. loop-a-verification-agent.txt: 코드 위임 예외 규칙 추가됨
+- vercel.json 생성 완료
+- git push 완료 (commit: 4e0041e)
+- Vercel 자동 재배포 트리거됨 (확인 필요)
 
 === 다음에 무엇을 해야 하는가 ===
-Node App 구현 단계:
-1. lib/prompt.ts: buildSystemPrompt() 함수 작성
-   - protocol-change-viewpoint-v1.txt 내용을 system prompt로 주입
-2. lib/compliance.ts: runComplianceCheck() 함수 작성
-   - generation-spec 기반 콘솔 전용 검증 출력
-3. API Route: Gemini 호출 (ANALYSIS + GENERATION 분리)
-4. UI: viewpoint_type 네이밍 앱 ↔ product-spec 일치 확인
-   - App.tsx state값(eyeLevel, rightSide 등) → kebab-case(eye-level, side)로 수정
+1. Vercel 대시보드에서 재배포 성공 여부 확인
+   - https://vercel.com 에서 cai-change-viewpoint-v3 프로젝트 확인
+   - 빌드 로그에서 `npm run build` 정상 실행 여부 확인
+
+2. 배포 성공 후 브라우저 테스트 (active-v14 미완료 항목):
+   - Bird's Eye 선택 → 04:30 버튼 → GENERATE
+   - Eye Level 07:30도 동일하게 테스트
+   - 콘솔 확인: Camera angle 라인, VP-1 PASS/FAIL
+
+3. active-v15 → completed/ 이동
+
+4. active-v13 / active-v14도 completed/ 이동 (이미 완료됨)
+
+=== 현재 작업 경로 (우선 순위) ===
+D:\OneDrive\바탕 화면\CRETE\N09-change-viewpoint\
+(git repo: g:\내 드라이브\CAI\Project-10\N09-change-viewpoint\N09-change-viewpoint\)
 
 === 주의사항 ===
-- Loop A는 MWRS 구조를 인식하지 못함 — 추후 loop-a 업데이트 필요 시 사용자에게 확인
-- COMPLIANCE CHECK는 코드 레이어(lib/compliance.ts)에서 처리, AI 프롬프트에 포함 안 됨
-- angle 필드는 시계 방향 표기 (04:30, 07:30 등 — 06:00이 건물 정면 기준)
+- Gemini 모델명: gemini-3.1-pro-preview (분석), gemini-3.1-flash-image-preview (이미지)
+- VP-1 체크: 분석 텍스트에 "04:30" / "07:30" 문자열이 포함되어야 PASS
+- CameraAngle은 birdEye/eyeLevel에만 적용 (front/rightSide/top은 undefined)
+- vercel.json은 repo 루트(N09-change-viewpoint/ 상위)에 위치

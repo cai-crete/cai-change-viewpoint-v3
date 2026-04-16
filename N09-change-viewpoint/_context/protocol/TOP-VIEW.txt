@@ -1,0 +1,64 @@
+# GOAL
+* Generate a precise "Orthographic TOP View" of the architecture presented in the source image.
+* Treat the building in the image as a completed, constructed reality.
+* Change the angle of view to this specific new perspective without altering the building's original geometry, materials, or style.
+* Render the simulation strictly by resetting the **Angle of View** and the **Optical Environment**.
+
+# **Photographer's workflow**
+**Manual Entry: Capturing the Orthographic Top View**
+
+This professional technique is used to create a perfectly flat, non-perspective, two-dimensional image of a building's roof, often referred to as a plan view.
+
+**Method:**
+1.  **Positioning:** Place the camera (typically a drone) at a sufficient altitude, positioned directly and vertically above the center of the building.
+
+2.  **Photographic Focus:** The objective is to capture the **graphic composition of the roof plane**. The focus should be on the building's overall **footprint, the geometric relationship between its forms and voids (such as courtyards or terraces), and the patterns created by roofing materials and structures**. The goal is to produce a clear, diagram-like representation of the building from above.
+
+3.  **Lighting:** As a standard professional practice, shoot under the **soft, even, diffused light of an overcast day**. This is critical to eliminate all shadows, which allows the pure geometry and texture of the roof plan to be documented with maximum clarity.
+
+4.  **Technique and Perspective Control:** This view requires a true **orthographic projection**. This is achieved through drone-based photogrammetry processing or a direct orthographic render. All sense of perspective must be eliminated, resulting in a perfect two-dimensional image. Frame the composition in a **1:1 square aspect ratio** to reinforce the plan-like quality.
+
+### Specification: Top View
+* **Shooting Intent**: Shows the roof plan configuration accurately without distortion and graphically expresses the relationship with the surrounding site.
+* **Camera**: DJI Mavic 3 Pro Cine (Drone)
+* **Lens**: 24mm Hasselblad Camera (Main Wide-angle Camera)
+* **Aperture**: f/8
+* **ISO**: 100
+* **Shutter Speed**: 1/250 sec
+* **Other Equipment**: Vertical Descent Shooting Mode (Securing accurate vertical view)
+
+---
+<json code>
+
+{
+  "prompt": {
+    "goal": [
+      "Generate a precise \"Orthographic TOP View\" of the architecture presented in the source image.",
+      "Treat the building in the image as a completed, constructed reality.",
+      "Change the angle of view to this specific new perspective without altering the building's original geometry, materials, or style.",
+      "Render the simulation strictly by resetting the Angle of View and the Optical Environment."
+    ],
+    "photographers_workflow": {
+      "title": "Manual Entry: Capturing the Orthographic Top View",
+      "description": "This professional technique is used to create a perfectly flat, non-perspective, two-dimensional image of a building's roof, often referred to as a plan view.",
+      "method": {
+        "positioning": "Place the camera (typically a drone) at a sufficient altitude, positioned directly and vertically above the center of the building.",
+        "photographic_focus": "The objective is to capture the graphic composition of the roof plane. The focus should be on the building's overall footprint, the geometric relationship between its forms and voids (such as courtyards or terraces), and the patterns created by roofing materials and structures. The goal is to produce a clear, diagram-like representation of the building from above.",
+        "lighting": "As a standard professional practice, shoot under the soft, even, diffused light of an overcast day. This is critical to eliminate all shadows, which allows the pure geometry and texture of the roof plan to be documented with maximum clarity.",
+        "technique_and_perspective_control": "This view requires a true orthographic projection. This is achieved through drone-based photogrammetry processing or a direct orthographic render. All sense of perspective must be eliminated, resulting in a perfect two-dimensional image. Frame the composition in a 1:1 square aspect ratio to reinforce the plan-like quality."
+      }
+    },
+    "specification": {
+      "view_type": "Top View",
+      "details": {
+        "shooting_intent": "Shows the roof plan configuration accurately without distortion and graphically expresses the relationship with the surrounding site.",
+        "camera": "DJI Mavic 3 Pro Cine (Drone)",
+        "lens": "24mm Hasselblad Camera (Main Wide-angle Camera)",
+        "aperture": "f/8",
+        "iso": 100,
+        "shutter_speed": "1/250 sec",
+        "other_equipment": "Vertical Descent Shooting Mode (Securing accurate vertical view)"
+      }
+    }
+  }
+}
