@@ -1,56 +1,40 @@
-REVISION: 4
+REVISION: 5
 DATE: 2026-04-16
-SESSION: N09 product-spec 미결 항목 완료
+SESSION: Protocol 교체 및 Loop A 검증
 
 === 방금 무엇을 했는가 ===
-App.tsx 분석 결과를 반영하여 product-spec 미결 항목 2개를 확정 처리
+1. protocol-change-viewpoint-v1.txt를 v5(MWRS 구조)로 전체 교체
+2. loop-a-verification-agent.txt에 COMPLIANCE CHECK 코드 위임 예외 규칙 추가
+3. 프로토콜에 # COMPLIANCE CHECK 위임 포인터 추가 (→ lib/compliance.ts)
+4. Loop A 검증 2회 실행
 
-**확정 결정 사항 (사용자 승인):**
-- Q1: viewpoint_type 네이밍 → 앱 코드를 product-spec에 맞춤 (kebab-case 유지)
-- Q2: side_direction 타입 → "03:00" | "09:00" (clock-face notation으로 변경)
-- Q3: altitude → 10m 고정 (Input Contract 미포함)
-- Q4: Pre-processing → 코드 레벨 최적화 (Protocol 미포함)
-- Q5: angle → analysis-spec 최상위 독립 필드로 명시
-
-**product-spec 변경 내용:**
-1. Input Contract
-   - side_direction 타입: "left"|"right" → "03:00"|"09:00"
-   - side_direction 자동 설정 로직 명시 (angle 04:30→03:00, 07:30→09:00)
-   - altitude 10m 고정 노트 추가
-2. Output Contract
-   - analysis_spec에 "angle" 독립 필드 추가 (출력 예시)
-   - 캔버스 배치 미결 → "확정" 텍스트로 변경
-3. ANALYSIS ROOM Axes
-   - "angle" 독립 필드 정의 섹션 추가
-   - angle → side_direction 자동 매핑 로직 명시
-4. "생성 이미지 캔버스 배치" 신규 섹션 추가
-   - X/Y 위치, Width/Height, 겹침 방지 로직 명세
-5. NodeContract TypeScript: side_direction enum 업데이트
-6. exec-plan v2, v4 → completed/ 이동
+**Loop A 결과 (Iteration 2):**
+- CHECK 1 FAIL: # SYSTEM, # CONTEXT, # ACTION PROTOCOL 헤더 누락 (내용은 존재)
+- CHECK 2 FAIL: Room 개요/상세 중복 4건
+- CHECK 3 FAIL: ACTION PROTOCOL ↔ COMPLIANCE CHECK 매핑 없음
+- CHECK 4 PASS: 4/5 (Pattern 1 취약)
+- 사용자 결정: 현행 MWRS 구조 유지, 헤더 수정 없이 진행
 
 === 어디까지 완료됐는가 ===
 1. Phase 1 앱 (Vite): 완료
-2. product-spec (NodeContract): 완료 — 미결 항목 전부 해소
+2. product-spec (NodeContract): 완료
 3. _context/protocol/ + Knowledge Docs 5개: 완료
-4. CLAUDE.md exec-plan 이양 정책: 완료
-5. exec-plan-complete-check.sh hook: 완료
-6. ARCHITECTURE.md _context/protocol/ 경로 반영: 완료
+4. protocol-change-viewpoint-v1.txt: v5(MWRS) 교체 완료
+   - Loop A FAIL 상태이나 사용자가 현행 유지 결정
+   - # COMPLIANCE CHECK → lib/compliance.ts 위임 포인터 추가됨
+5. loop-a-verification-agent.txt: 코드 위임 예외 규칙 추가됨
 
 === 다음에 무엇을 해야 하는가 ===
-1. Protocol 파일 작성 (AGENT A 다음 단계)
-   - 경로: D:\OneDrive\바탕 화면\CRETE\N09-change-viewpoint\_context\protocol\protocol-change-viewpoint-v1.txt
-   - 필수 섹션: [ANALYSIS ROOM] + [GENERATION ROOM]
-   - ANALYSIS ROOM: 3 axes (optical_viewpoint, geometric_spatial, conceptual_visual) + angle 독립 필드
-   - GENERATION ROOM: viewpoint_type별 5개 분기 + side_direction(03:00/09:00) 조건
-   - Loop A 검증(/ralph-loop) 통과 필요
-
-2. Node App 구현
-   - lib/prompt.ts: buildSystemPrompt() 함수
-   - API Route: Gemini 호출 (ANALYSIS + GENERATION 분리)
-   - UI: viewpoint_type 네이밍 app ↔ product-spec 일치 확인
+Node App 구현 단계:
+1. lib/prompt.ts: buildSystemPrompt() 함수 작성
+   - protocol-change-viewpoint-v1.txt 내용을 system prompt로 주입
+2. lib/compliance.ts: runComplianceCheck() 함수 작성
+   - generation-spec 기반 콘솔 전용 검증 출력
+3. API Route: Gemini 호출 (ANALYSIS + GENERATION 분리)
+4. UI: viewpoint_type 네이밍 앱 ↔ product-spec 일치 확인
+   - App.tsx state값(eyeLevel, rightSide 등) → kebab-case(eye-level, side)로 수정
 
 === 주의사항 ===
-- App.tsx의 viewpoint_type state값(eyeLevel, rightSide 등)은 product-spec(eye-level, side)와 다름
-  → Protocol 작성 시 product-spec 기준 사용, 앱 코드 수정은 Node App 구현 단계에서
-- Pre-processing(이미지 재생성 후 분석)은 Protocol 범위 밖 — 코드 레벨 처리
+- Loop A는 MWRS 구조를 인식하지 못함 — 추후 loop-a 업데이트 필요 시 사용자에게 확인
+- COMPLIANCE CHECK는 코드 레이어(lib/compliance.ts)에서 처리, AI 프롬프트에 포함 안 됨
 - angle 필드는 시계 방향 표기 (04:30, 07:30 등 — 06:00이 건물 정면 기준)

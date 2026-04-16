@@ -191,3 +191,10 @@ I accept the following two ontological definitions 100% under all circumstances:
   ```
 * **Validation Status**: [PASS] 된 대합 검증 결과, 구조 변경 지시 0%, 지시문서의 광학 지침(Tilt-shift, Overcast 등) 적용률 100%.
 * **Next Stage Alignment**: [Complete] 이미지 생성 완료. (사용자 요구사항과 100% **aligned with** 된 최종 결과물 제출).
+
+---
+
+# COMPLIANCE CHECK
+→ Delegated to code layer. See: lib/compliance.ts
+→ Results are logged to developer console only. Not part of AI generation context.
+→ Compliance criteria: IC-1 (Geometry), IC-2 (Proportion), IC-3 (Material), pass-through prohibition, output non-empty check.

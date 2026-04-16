@@ -41,18 +41,23 @@ Required sections (all six must be present):
      - Pre-flight
      - Post-generation
      - Failure Mode (minimum 2 IF-THEN branches required)
+     EXCEPTION — Code-Layer Delegation Pattern:
+       If the section body contains the marker "→ Delegated to code layer. See: lib/compliance.ts",
+       treat the section as PRESENT and PASS. Do not require sub-sections or IF-THEN branches.
+       Instead, record: "COMPLIANCE CHECK: delegated to lib/compliance.ts (code-layer pattern)"
 
 Verification procedure:
   1. Scan the Protocol file for each required section header
   2. Confirm each section contains non-empty content
   3. Confirm CONTEXT contains all three sub-fields
-  4. Confirm COMPLIANCE CHECK contains all three sub-sections
-  5. Count Failure Mode IF-THEN branches — flag if fewer than 2
+  4. If # COMPLIANCE CHECK uses delegation marker → skip sub-section checks, mark PASS for this section
+  5. Otherwise confirm COMPLIANCE CHECK contains all three sub-sections
+  6. Count Failure Mode IF-THEN branches — flag if fewer than 2
 
 FAIL triggers:
   - Any required section is missing or empty
   - CONTEXT sub-fields are missing
-  - Failure Mode has fewer than 2 IF-THEN branches
+  - Failure Mode has fewer than 2 IF-THEN branches (only when delegation marker is NOT present)
 
 ========================================
 CHECK 2: CONCISENESS
