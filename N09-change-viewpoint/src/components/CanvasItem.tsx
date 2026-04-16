@@ -1,5 +1,5 @@
 import { Loader2 } from 'lucide-react';
-import { CanvasItem as CanvasItemType } from '../types';
+import type { CanvasItem as CanvasItemType } from '../types';
 import ItemFloatingBar from './ItemFloatingBar';
 import LibraryArtboard from './LibraryArtboard';
 

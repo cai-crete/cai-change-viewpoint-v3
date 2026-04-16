@@ -1,5 +1,5 @@
 import { Loader2, RotateCcw, Download, Book, Trash2 } from 'lucide-react';
-import { CanvasItem } from '../types';
+import type { CanvasItem } from '../types';
 
 interface ItemFloatingBarProps {
   item: CanvasItem;

@@ -1,5 +1,5 @@
 import { MousePointer2, Hand, Undo, Redo } from 'lucide-react';
-import { CanvasItem } from '../types';
+import type { CanvasItem } from '../types';
 
 interface LeftToolbarProps {
   canvasMode: 'select' | 'pan';

@@ -310,7 +310,7 @@ export default function RightPanel({
                     <button
                       onClick={handleGenerate}
                       disabled={isGenerating || !selectedView}
-                      className="relative w-full border border-black dark:border-white py-2 font-display tracking-widest uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="relative w-full border border-black dark:border-white py-2 font-display tracking-widests uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <span className={`block transition-opacity ${isGenerating ? 'opacity-0' : 'opacity-100'}`}>Generate</span>
                       {isGenerating && (

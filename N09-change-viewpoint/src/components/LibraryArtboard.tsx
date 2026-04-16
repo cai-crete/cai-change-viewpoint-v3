@@ -1,4 +1,4 @@
-import { CanvasItem } from '../types';
+import type { CanvasItem } from '../types';
 
 interface LibraryArtboardProps {
   item: CanvasItem;
