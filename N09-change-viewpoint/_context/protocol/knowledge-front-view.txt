@@ -1,0 +1,77 @@
+KNOWLEDGE DOC — Front Elevation View
+Node: N09 change-viewpoint
+Version: v1
+
+========================================
+GOAL
+========================================
+
+Generate a precise "Front Elevation View" of the architecture presented in the source image.
+Treat the building in the image as a completed, constructed reality.
+Change the angle of view to this specific new perspective without altering the building's original geometry, materials, or style.
+Render the simulation strictly by resetting the Angle of View and the Optical Environment.
+
+========================================
+PHOTOGRAPHER'S WORKFLOW
+========================================
+
+Manual Entry: Capturing a Distortion-Free Elevation (Front) View
+This professional technique creates a perfectly flat, perspective-corrected representation of a building's facade.
+
+POSITIONING:
+  Place the camera directly facing the facade, ensuring the camera's sensor plane is perfectly parallel to the building's surface.
+
+PHOTOGRAPHIC FOCUS:
+  The objective is to document the formal composition of the facade.
+  Concentrate on the building's sense of proportion, the rhythm of its modular elements (windows, panels), and its pure materiality.
+  The goal is to represent the architect's two-dimensional design intent with absolute clarity.
+
+LIGHTING:
+  Shoot under the soft, even, diffused light of an overcast day.
+  This neutral lighting renders textures and colors accurately without shadows that could obscure facade details.
+
+LENS AND PERSPECTIVE CONTROL:
+  The use of a tilt-shift lens is non-negotiable for this type of shot.
+  It allows for precise composition while keeping the camera level.
+  All vertical and horizontal lines must be perfectly parallel to the frame.
+  A telephoto lens can also be used from a distance to further compress perspective.
+
+========================================
+SPECIFICATION
+========================================
+
+VIEW_TYPE: Front Elevation View
+SHOOTING_INTENT: Records the architect's design intent accurately and objectively like a 2D drawing. Minimizes perspective to emphasize proportion and rhythm of the facade.
+CAMERA: Sony A7R V
+LENS: Canon TS-E 50mm f/2.8L MACRO (Standard angle Tilt-Shift Lens)
+APERTURE: f/11
+ISO: 100
+SHUTTER_SPEED: 1/125 sec
+OTHER_EQUIPMENT: Tripod
+
+========================================
+IMAGE GENERATION PARAMETERS
+========================================
+
+PROMPT_RULES:
+  - Simulate a perfectly flat, front-facing elevation view — camera sensor parallel to facade
+  - Minimize all perspective distortion; render as close to orthographic as possible
+  - Preserve all original geometry, materials, and proportions — no alteration
+  - Apply soft overcast lighting (no shadows obscuring facade details)
+  - All vertical and horizontal lines must be perfectly straight
+
+STYLE_PARAMS:
+  rendering_style: photorealistic architectural elevation photography
+  camera_angle: dead-on front, sensor parallel to facade
+  perspective: minimal, near-orthographic
+  lighting: overcast diffused, flat even illumination
+  lens_correction: tilt-shift, all lines parallel
+
+NEGATIVE_PROMPT:
+  cartoon, illustration, sketch, watermark, blur,
+  perspective distortion, corner view, angled view, tilted verticals,
+  altered geometry, added elements, harsh shadows
+
+QUALITY_GATE:
+  If image shows perspective distortion or angled view → regenerate once
+  If vertical/horizontal lines are not parallel → regenerate once

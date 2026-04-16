@@ -1,5 +1,0 @@
-{
-  "buildCommand": "cd cai-change-viewpoint-v2 && npm install && npm run build",
-  "outputDirectory": "cai-change-viewpoint-v2/dist",
-  "installCommand": "echo 'dependencies installed in buildCommand'"
-}

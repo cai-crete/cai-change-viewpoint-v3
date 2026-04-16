@@ -1,0 +1,79 @@
+KNOWLEDGE DOC — Orthographic Top View
+Node: N09 change-viewpoint
+Version: v1
+
+========================================
+GOAL
+========================================
+
+Generate a precise "Orthographic TOP View" of the architecture presented in the source image.
+Treat the building in the image as a completed, constructed reality.
+Change the angle of view to this specific new perspective without altering the building's original geometry, materials, or style.
+Render the simulation strictly by resetting the Angle of View and the Optical Environment.
+
+========================================
+PHOTOGRAPHER'S WORKFLOW
+========================================
+
+Manual Entry: Capturing the Orthographic Top View
+This professional technique creates a perfectly flat, non-perspective, two-dimensional image of a building's roof — a plan view.
+
+POSITIONING:
+  Place the camera (drone) at sufficient altitude, positioned directly and vertically above the center of the building.
+  Camera must point straight down at exactly 90 degrees (nadir position).
+
+PHOTOGRAPHIC FOCUS:
+  Capture the graphic composition of the roof plane.
+  Focus on the building's overall footprint, the geometric relationship between forms and voids (courtyards, terraces), and the patterns created by roofing materials and structures.
+  Produce a clear, diagram-like representation of the building from above.
+
+LIGHTING:
+  Shoot under the soft, even, diffused light of an overcast day.
+  This eliminates all shadows, allowing the pure geometry and texture of the roof plan to be documented with maximum clarity.
+
+TECHNIQUE AND PERSPECTIVE CONTROL:
+  This view requires a true orthographic projection.
+  All sense of perspective must be eliminated, resulting in a perfect two-dimensional image.
+  Frame the composition in a 1:1 square aspect ratio to reinforce the plan-like quality.
+
+========================================
+SPECIFICATION
+========================================
+
+VIEW_TYPE: Orthographic Top View
+SHOOTING_INTENT: Shows the roof plan configuration accurately without distortion and graphically expresses the relationship with the surrounding site.
+CAMERA: DJI Mavic 3 Pro Cine (Drone)
+LENS: 24mm Hasselblad Camera (Main Wide-angle Camera)
+APERTURE: f/8
+ISO: 100
+SHUTTER_SPEED: 1/250 sec
+OTHER_EQUIPMENT: Vertical Descent Shooting Mode (securing accurate vertical view)
+
+========================================
+IMAGE GENERATION PARAMETERS
+========================================
+
+PROMPT_RULES:
+  - Simulate a perfectly vertical top-down orthographic view (nadir, 90 degrees straight down)
+  - Eliminate all perspective — render as true orthographic projection
+  - Show roof plane and footprint clearly with no vanishing points
+  - Preserve all original geometry, materials, and proportions — no alteration
+  - Apply soft overcast lighting (no directional shadows, maximum roof clarity)
+  - Aspect ratio: 1:1 square
+
+STYLE_PARAMS:
+  rendering_style: orthographic top-view architectural plan photography
+  camera_height: directly above, nadir position
+  camera_angle: 90 degrees straight down
+  perspective: orthographic, no vanishing points
+  lighting: overcast diffused, shadowless, even illumination
+
+NEGATIVE_PROMPT:
+  cartoon, illustration, sketch, watermark, blur,
+  perspective view, vanishing points, angled view, tilted view,
+  altered geometry, added elements, directional shadows, ground-level elements
+
+QUALITY_GATE:
+  If image shows perspective distortion or vanishing points → regenerate once
+  If building footprint is not visible from directly above → regenerate once
+  If aspect ratio is not 1:1 → note in generation-spec

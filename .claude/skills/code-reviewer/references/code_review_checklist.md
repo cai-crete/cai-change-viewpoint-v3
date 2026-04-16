@@ -1,52 +1,103 @@
-# Code Review Checklist — N09 Change Viewpoint (App.tsx)
+# Code Review Checklist
 
-> **대상 파일:** `cai-change-viewpoint-v2/src/App.tsx`
-> **기준 문서:** `docs/RELIABILITY.md`, `docs/SECURITY.md`
+## Overview
 
----
+This reference guide provides comprehensive information for code reviewer.
 
-## CATEGORY A: Protocol Injection
+## Patterns and Practices
 
-| # | Check | Pass Condition | Priority |
-|---|-------|---------------|----------|
-| A1 | `finalPrompt` null/empty guard | API 호출 전 `finalPrompt`가 비어있지 않은지 확인 | HIGH |
-| A2 | All 5 view types handled | `eyeLevel`, `front`, `top`, `rightSide`, `birdEye` 모두 분기 처리됨 | HIGH |
-| A3 | Protocol override applied | `protocolContent` 존재 시 `finalPrompt`에 프로토콜 주입 확인 | HIGH |
-| A4 | analysisContext injected | `analysisContext`가 `finalPrompt`에 포함됨 | MID |
-| A5 | `[GENERATE IMAGE NOW]` present | 각 뷰 프롬프트 끝에 생성 트리거 존재 | MID |
+### Pattern 1: Best Practice Implementation
 
----
+**Description:**
+Detailed explanation of the pattern.
 
-## CATEGORY B: API Reliability (RELIABILITY.md 기준)
+**When to Use:**
+- Scenario 1
+- Scenario 2
+- Scenario 3
 
-| # | Check | Pass Condition | Priority |
-|---|-------|---------------|----------|
-| B1 | Fallback model exists | `ANALYSIS_FALLBACK` 또는 `IMAGE_GEN_FALLBACK` 사용 | HIGH |
-| B2 | Max retry ≤ 2 | 재시도 로직이 최대 2회를 초과하지 않음 | HIGH |
-| B3 | User error message on failure | `catch` 블록에서 사용자 노출 오류 메시지 존재 | HIGH |
-| B4 | `isGenerating` state guard | 중복 생성 방지 state 플래그 사용 | MID |
-| B5 | `finally` cleanup | `setIsGenerating(false)` finally 블록에서 실행 | MID |
+**Implementation:**
+```typescript
+// Example code implementation
+export class Example {
+  // Implementation details
+}
+```
 
----
+**Benefits:**
+- Benefit 1
+- Benefit 2
+- Benefit 3
 
-## CATEGORY C: Security (SECURITY.md 기준)
+**Trade-offs:**
+- Consider 1
+- Consider 2
+- Consider 3
 
-| # | Check | Pass Condition | Priority |
-|---|-------|---------------|----------|
-| C1 | No hardcoded API key | 소스코드 내 `AIzaSy` 패턴 없음 | HIGH |
-| C2 | Env var usage | `import.meta.env.VITE_GEMINI_API_KEY` 패턴 사용 | HIGH |
-| C3 | Image type validation | 업로드 시 JPEG/PNG/WebP 이외 거부 로직 | HIGH |
-| C4 | JSON.parse on API response | Gemini 응답 JSON 파싱 시 try/catch 존재 | MID |
-| C5 | No API key in logs | `console.log` 등에 API 키 변수 노출 없음 | HIGH |
+### Pattern 2: Advanced Technique
 
----
+**Description:**
+Another important pattern for code reviewer.
 
-## CATEGORY D: N09-specific
+**Implementation:**
+```typescript
+// Advanced example
+async function advancedExample() {
+  // Code here
+}
+```
 
-| # | Check | Pass Condition | Priority |
-|---|-------|---------------|----------|
-| D1 | TRANSFORMATION DIRECTIVE in rightSide | SOURCE/TARGET 정보 프롬프트에 주입됨 | HIGH |
-| D2 | `rightSideDirection` auto-determination | `04:30` → `03:00`, `07:30` → `09:00` 로직 존재 | MID |
-| D3 | Protocol file fetched at runtime | `useProtocol` hook이 selectedView 기반으로 프로토콜 fetch | MID |
-| D4 | Conformance check triggered | 이미지 생성 후 `verifyConformance()` 호출됨 | MID |
-| D5 | Source image from motherId | `generated` 타입 아이템은 motherId를 소스로 사용 | LOW |
+## Guidelines
+
+### Code Organization
+- Clear structure
+- Logical separation
+- Consistent naming
+- Proper documentation
+
+### Performance Considerations
+- Optimization strategies
+- Bottleneck identification
+- Monitoring approaches
+- Scaling techniques
+
+### Security Best Practices
+- Input validation
+- Authentication
+- Authorization
+- Data protection
+
+## Common Patterns
+
+### Pattern A
+Implementation details and examples.
+
+### Pattern B
+Implementation details and examples.
+
+### Pattern C
+Implementation details and examples.
+
+## Anti-Patterns to Avoid
+
+### Anti-Pattern 1
+What not to do and why.
+
+### Anti-Pattern 2
+What not to do and why.
+
+## Tools and Resources
+
+### Recommended Tools
+- Tool 1: Purpose
+- Tool 2: Purpose
+- Tool 3: Purpose
+
+### Further Reading
+- Resource 1
+- Resource 2
+- Resource 3
+
+## Conclusion
+
+Key takeaways for using this reference guide effectively.

@@ -20,32 +20,24 @@ AGENTS.md의 금지 사항이 선언적 규칙(예: "API 키를 노출하지 말
 
 - API 키는 절대 코드에 하드코딩하지 않음
 - `.env.local` 파일로 관리, `.gitignore`에 반드시 포함
-- 배포 시 환경 변수로 설정 (Vercel: Environment Variables)
-- **실제 사용 변수명:** `VITE_GEMINI_API_KEY` (Google Gemini API)
+- Vercel 배포 시 Environment Variables로 설정
 
 ```
-VITE_GEMINI_API_KEY=AIzaSy...
+ANTHROPIC_API_KEY=sk-...
 ```
-
-> **주의:** `VITE_` 접두사가 붙은 환경 변수는 Vite 빌드 시 클라이언트 번들에 포함됩니다.
-> 이 프로젝트는 백엔드가 없는 클라이언트 직접 호출 구조이므로, `.env.local`의 API 키는
-> 브라우저에서 직접 사용됩니다. `.env.local`은 반드시 `.gitignore`에 포함해야 합니다.
 
 ## Protocol 파일 보안
 
-- 이 프로젝트는 Vite + React 기반 클라이언트 전용 앱입니다 (서버 없음)
-- Protocol 내용은 `handleGenerate()` 내에서 Gemini API 호출 시 프롬프트에 직접 삽입됩니다
-- Protocol 파일(`docs/references/n09-protocol-*.md`)은 소스코드와 함께 번들되지 않으며,
-  개발 세션에서 Agent가 참조하는 설계 문서입니다
-- 민감한 비즈니스 로직이 포함된 Protocol은 공개 저장소에 커밋하지 않습니다
+- Principle Protocol은 서버 사이드에서만 로드
+- 클라이언트(브라우저)에 Protocol 내용 노출 금지
+- API Route에서 system 파라미터로만 전달
 
 ## 입력 검증
 
-- 백엔드 API Route가 없으므로 클라이언트 사이드에서 검증 처리
+- 사용자 입력은 API Route에서 검증 후 처리
 - 이미지 업로드: 파일 타입·크기 제한 (JPEG/PNG/WebP, 10MB 이하)
 - 텍스트 입력: 길이 제한 (2000자 이하)
 - 개인 정보 포함 이미지 업로드 방지 안내
-- Gemini API 응답은 항상 구조 검증 후 사용 (`JSON.parse` + 스키마 확인)
 
 ---
 

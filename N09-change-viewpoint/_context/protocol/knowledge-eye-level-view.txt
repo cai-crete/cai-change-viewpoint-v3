@@ -1,0 +1,75 @@
+KNOWLEDGE DOC — Eye-Level Corner View
+Node: N09 change-viewpoint
+Version: v1
+
+========================================
+GOAL
+========================================
+
+Generate a precise "Eye-Level Corner View" of the architecture presented in the source image.
+Treat the building in the image as a completed, constructed reality.
+Change the angle of view to this specific new perspective without altering the building's original geometry, materials, or style.
+Render the simulation strictly by resetting the Angle of View and the Optical Environment.
+
+========================================
+PHOTOGRAPHER'S WORKFLOW
+========================================
+
+Manual Entry: Capturing a Dynamic Eye-Level Corner View
+This professional technique utilizes a two-point perspective to maximize a building's sense of form, volume, and depth.
+
+POSITIONING:
+  Place the camera at street level, maintaining a standard eye-level height (approx. 1.7 meters).
+  Position the camera at a corner intersection to allow two primary facades to recede into the frame with balanced prominence.
+
+PHOTOGRAPHIC FOCUS:
+  The core objective is a clear, objective documentation of the architecture.
+  Concentrate on the interplay of form and material textures.
+  The pattern of fenestration and structural rhythm must be sharp and precise to establish a clear sense of scale and repetition.
+
+LIGHTING:
+  Shoot under the heavily diffused, even light of a high-level overcast cloud cover.
+  This neutral, soft lighting is essential to reveal the full textural details of all materials without harsh shadows or specular glare.
+
+LENS AND PERSPECTIVE CONTROL:
+  Use a wide-angle perspective control (tilt-shift) lens, equivalent to 24mm on a full-frame sensor.
+  All vertical lines must be perfectly straight and parallel to the frame.
+
+========================================
+SPECIFICATION
+========================================
+
+VIEW_TYPE: Corrected Eye-Level Corner View
+SHOOTING_INTENT: Naturally and accurately expresses the building's three-dimensionality and surrounding urban context.
+CAMERA: Full-Frame Mirrorless (High-Resolution Sensor, e.g., Sony A7R V or equivalent)
+LENS: 24mm f/3.5 Perspective Control (Tilt-Shift) Lens
+APERTURE: f/11
+ISO: 100
+SHUTTER_SPEED: 1/160 sec
+OTHER_EQUIPMENT: Gitzo Systematic Tripod with Geared Head, Cable Release
+
+========================================
+IMAGE GENERATION PARAMETERS
+========================================
+
+PROMPT_RULES:
+  - Simulate a ground-level eye-height (1.7m) corner view with two-point perspective
+  - Preserve all original geometry, materials, and proportions — no alteration
+  - Apply soft overcast lighting (no harsh directional shadows)
+  - Ensure all vertical lines are perfectly straight (tilt-shift correction)
+  - Render with architectural photography realism: photorealistic, 8K, sharp detail
+
+STYLE_PARAMS:
+  rendering_style: photorealistic architectural photography
+  camera_height: 1.7m eye-level
+  perspective: two-point perspective, corner view
+  lighting: overcast diffused, even, soft shadows
+  lens_correction: tilt-shift, vertical lines parallel
+
+NEGATIVE_PROMPT:
+  cartoon, illustration, sketch, watermark, blur, distortion,
+  altered geometry, added elements, fisheye, wide distortion, tilted verticals
+
+QUALITY_GATE:
+  If generated image shows altered building geometry → regenerate once
+  If vertical lines are distorted → regenerate once

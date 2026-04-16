@@ -53,13 +53,6 @@ Run checks in this exact order. Do not skip checks.
 
 --- PHASE V1: LOOP A (Protocol Consistency) ---
 
-Before executing manually, trigger ralph-wiggum to enforce iterative re-checking:
-
-  /ralph-loop "loop-a-verification-agent.txt 를 대상 Protocol 파일에 적용하여 4개 체크를 모두 수행하라. 결함이 0건이고 OVERALL VERDICT가 PASS일 때만 <promise>VERIFIED</promise>를 출력하라." \
-    --max-iterations 3 \
-    --completion-promise "VERIFIED"
-
-ralph-wiggum 루프가 종료된 후 (VERIFIED 달성 또는 3회 완료):
 Load and execute loop-a-verification-agent.txt against the Protocol file.
 Record results for all 4 checks.
 If Loop A OVERALL VERDICT is FAIL: do not proceed to V2. Report immediately.

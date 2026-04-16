@@ -1,0 +1,92 @@
+KNOWLEDGE DOC — Side Elevation View
+Node: N09 change-viewpoint
+Version: v1
+
+========================================
+GOAL
+========================================
+
+Generate a precise "Side Elevation View" of the architecture presented in the source image.
+Treat the building in the image as a completed, constructed reality.
+Change the angle of view to this specific new perspective without altering the building's original geometry, materials, or style.
+Render the simulation strictly by resetting the Angle of View and the Optical Environment.
+
+========================================
+DIRECTION RULE
+========================================
+
+SIDE_DIRECTION INPUT:
+  right → Target RIGHT side facade (03:00 direction relative to building front at 06:00)
+  left  → Target LEFT side facade  (09:00 direction relative to building front at 06:00)
+
+EXECUTION:
+  Scan the source image to identify the building front (06:00 reference).
+  Rotate the virtual camera to the specified side direction.
+  Position camera so sensor plane is perfectly parallel to the target side facade.
+
+========================================
+PHOTOGRAPHER'S WORKFLOW
+========================================
+
+Manual Entry: Capturing a Distortion-Free Elevation View (Side)
+This professional technique creates a perfectly flat, perspective-corrected representation of a building's side facade.
+
+ANGLE RECOGNITION AND POSITIONING:
+  Analyze the source image to identify the front facade.
+  Based on side_direction input (right/left), determine the target side facade.
+  Place the camera so the sensor plane is perfectly parallel to the building's side surface.
+
+PHOTOGRAPHIC FOCUS:
+  Document the formal composition of the side facade.
+  Concentrate on the building's sense of proportion, the rhythm of modular elements (windows, panels), and pure materiality.
+  Represent the architect's two-dimensional design intent with absolute clarity.
+
+LIGHTING:
+  Shoot under the soft, even, diffused light of an overcast day.
+  This neutral lighting renders textures and colors accurately without shadows.
+
+LENS AND PERSPECTIVE CONTROL:
+  The use of a tilt-shift lens is non-negotiable.
+  All vertical and horizontal lines must be perfectly parallel to the frame.
+  A telephoto lens can also be used to further compress perspective.
+
+========================================
+SPECIFICATION
+========================================
+
+VIEW_TYPE: Side Elevation View
+SHOOTING_INTENT: Records the architect's design intent accurately and objectively like a 2D drawing. Minimizes perspective to emphasize proportion and rhythm of the side facade.
+CAMERA: Sony A7R V
+LENS: Canon TS-E 50mm f/2.8L MACRO (Standard angle Tilt-Shift Lens)
+APERTURE: f/11
+ISO: 100
+SHUTTER_SPEED: 1/125 sec
+OTHER_EQUIPMENT: Tripod
+
+========================================
+IMAGE GENERATION PARAMETERS
+========================================
+
+PROMPT_RULES:
+  - Read side_direction from input: "right" → 03:00 position / "left" → 09:00 position
+  - Simulate a perfectly flat, side-facing elevation view — camera sensor parallel to side facade
+  - Preserve all original geometry, materials, and proportions — no alteration
+  - Apply soft overcast lighting (no harsh shadows obscuring facade)
+  - All vertical and horizontal lines must be perfectly straight
+
+STYLE_PARAMS:
+  rendering_style: photorealistic architectural elevation photography
+  camera_angle: 90-degree side view (either right or left per input)
+  perspective: minimal, near-orthographic
+  lighting: overcast diffused, flat even illumination
+  lens_correction: tilt-shift, all lines parallel
+
+NEGATIVE_PROMPT:
+  cartoon, illustration, sketch, watermark, blur,
+  perspective distortion, corner view, front view, tilted verticals,
+  altered geometry, added elements, harsh shadows
+
+QUALITY_GATE:
+  If image shows wrong side (left when right requested, or vice versa) → regenerate once
+  If perspective distortion present → regenerate once
+  If vertical/horizontal lines are not parallel → regenerate once

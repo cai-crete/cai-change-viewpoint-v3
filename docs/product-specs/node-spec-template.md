@@ -57,7 +57,7 @@
 
 ## Protocol 구성
 
-> 파일명 규칙 및 버전 관리 기준: `docs/design-docs/protocol-design-guide.md §5`
+> 파일명 규칙 및 버전 관리 기준: `docs/product-specs/protocol-design-guide.md §5`
 
 | 파일 | 유형 |
 |------|------|
@@ -83,7 +83,7 @@
 
 ## 알려진 실패 패턴
 
-> `docs/design-docs/protocol-design-guide.md §6` 오염 패턴 카탈로그에 포함되지 않은 **이 노드 전용 패턴만** 기록합니다.
+> `docs/product-specs/protocol-design-guide.md §6` 오염 패턴 카탈로그에 포함되지 않은 **이 노드 전용 패턴만** 기록합니다.
 
 | 패턴 | 재현 조건 | 처방 |
 |------|----------|------|

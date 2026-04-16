@@ -1,11 +1,11 @@
 # Product Specs — 노드 스펙 인덱스
 
 각 노드의 입력·출력 계약, Protocol 버전, 컴플라이언스 체크리스트를 정의합니다.
+각 노드의 프로토콜은 `n#-project-name/protocol/` 폴더 내 파일을 참조하세요.
 
-| 노드 | 스펙 파일 | 상태 |
-|------|-----------|------|
-| N09 | [n09-change-viewpoint.md](n09-change-viewpoint.md) | 완료 (v2 기준) |
-| N01~N08, N10 | `node-spec-template.md` 기반으로 작성 | 미작성 |
+| 노드 | 스펙 파일 |
+|------|-----------|
+| N01~N10 | `node-spec-template.md` 기반으로 작성 |
 
 ---
 

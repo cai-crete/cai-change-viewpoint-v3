@@ -22,6 +22,21 @@
 
 ---
 
+## Feature List
+
+구현해야 할 기능 전체 목록입니다. **모든 항목이 `passes: true`가 될 때까지 작업 완료를 선언할 수 없습니다.**
+
+```json
+{
+  "feature_list": [
+    { "id": "F01", "feature": "[기능 설명]", "passes": false },
+    { "id": "F02", "feature": "[기능 설명]", "passes": false }
+  ]
+}
+```
+
+---
+
 ## Progress
 
 세분화된 체크포인트와 타임스탬프 — 실제 완료된 작업만 기록합니다.

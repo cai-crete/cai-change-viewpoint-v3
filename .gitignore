@@ -3,36 +3,19 @@
 .claude/*.tmp.*
 .claude/settings.local.json
 
-# 의존성
+# Environment files
+.env*
+
+# Node modules
 node_modules/
-**/node_modules/
 
-# 빌드 산출물
-dist/
-**/dist/
-build/
-**/build/
-coverage/
-
-# 환경 변수 (보안 — 절대 커밋 금지)
-.env
-.env.local
-.env.*.local
-**/.env
-**/.env.local
-**/.env.*.local
-
-# 운영체제
+# OS files
 .DS_Store
 Thumbs.db
 
-# 로그
-*.log
-npm-debug.log*
+# Build outputs
+dist/
+build/
+.next/
+out/
 
-# 에디터
-.vscode/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
